@@ -1,6 +1,6 @@
 import unittest
 from calculator import *
-# https://github.com/muratatar06/Lab10-HS-MA
+# https://github.com/HuaixiSun/Lab10-HS-MA
 # Partner 1: Murat Atar
 # Partner 2: Huaixi Sun
 class TestCalculator(unittest.TestCase):
@@ -9,6 +9,20 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(add(2, 3), 5)
         self.assertEqual(add(-1, 5), 4)
         self.assertEqual(add(0, 0), 0)
+import calculator
+
+class TestCalculator(unittest.TestCase):
+
+    def test_add(self):
+        self.assertEqual(calculator.add(1, 2), 3)
+        self.assertEqual(calculator.add(0, 1), 1)
+        self.assertEqual(calculator.add(-1, 2), 1)
+
+    def test_subtract(self):
+        self.assertEqual(calculator.sub(3, 2), 1)
+        self.assertEqual(calculator.sub(1, 2), -1)
+        self.assertEqual(calculator.sub(1, 0), 1)
+
 
     ######## Partner 1
     def test_multiply(self):  # 3 assertions
@@ -31,7 +45,19 @@ class TestCalculator(unittest.TestCase):
         self.assertAlmostEqual(log(10, 1000), 3)
         self.assertAlmostEqual(log(4, 16), 2)
 
-    
+    def test_divide_by_zero(self):
+        with self.assertRaises(ZeroDivisionError):
+            calculator.div(0, 1)
+
+    def test_logarithm(self):
+        self.assertAlmostEqual(calculator.log(2, 8), 3)
+        self.assertAlmostEqual(calculator.log(-1, 1), 2)
+        self.assertAlmostEqual(calculator.log(3, 9), 2)
+
+    def test_log_invalid_base(self):
+        with self.assertRaises(ValueError):
+            calculator.log(1, 10)
+
     ######## Partner 1
     def test_log_invalid_argument(self):  # 1 assertion
         with self.assertRaises(ValueError):
