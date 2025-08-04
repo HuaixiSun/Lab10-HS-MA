@@ -1,3 +1,7 @@
+# https://github.com/HuaixiSun/Lab10-HS-MA
+# Partner 1 : Murat Atar
+# Partner 2 : Huaixi Sun
+
 import math
 def square_root(a):
     try:

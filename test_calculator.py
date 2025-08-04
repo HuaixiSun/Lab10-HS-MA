@@ -1,8 +1,10 @@
-import unittest
-from calculator import *
 # https://github.com/HuaixiSun/Lab10-HS-MA
 # Partner 1: Murat Atar
 # Partner 2: Huaixi Sun
+
+import unittest
+from calculator import *
+
 class TestCalculator(unittest.TestCase):
     ######### Partner 2
     def test_add(self):  # 3 assertions
