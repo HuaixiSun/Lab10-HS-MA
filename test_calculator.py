@@ -1,8 +1,9 @@
-import unittest
-from calculator import *
 # https://github.com/HuaixiSun/Lab10-HS-MA
 # Partner 1: Murat Atar
 # Partner 2: Huaixi Sun
+import unittest
+from calculator import *
+
 class TestCalculator(unittest.TestCase):
     ######### Partner 2
     def test_add(self):  # 3 assertions
@@ -41,9 +42,9 @@ class TestCalculator(unittest.TestCase):
             div(0, 5)
 
     def test_logarithm(self):  # 3 assertions
-        self.assertAlmostEqual(log(2, 8), 3)
-        self.assertAlmostEqual(log(10, 1000), 3)
-        self.assertAlmostEqual(log(4, 16), 2)
+        self.assertAlmostEqual(logarithm(2, 8), 3)
+        self.assertAlmostEqual(logarithm(10, 1000), 3)
+        self.assertAlmostEqual(logarithm(4, 16), 2)
 
     def test_divide_by_zero(self):
         with self.assertRaises(ZeroDivisionError):
@@ -61,7 +62,7 @@ class TestCalculator(unittest.TestCase):
     ######## Partner 1
     def test_log_invalid_argument(self):  # 1 assertion
         with self.assertRaises(ValueError):
-            log(2, -5)
+            logarithm(2, -5)
 
     def test_hypotenuse(self):  # 3 assertions
         self.assertAlmostEqual(hypotenuse(3, 4), 5)
